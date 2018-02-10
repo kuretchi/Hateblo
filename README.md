@@ -150,7 +150,7 @@ await blog.PostAsync(entry);
 
 ```csharp
 entry.Title += " (MM/DD 追記)";
-entry.Content += " \nほげほげ";
+entry.Content.Text += " \nほげほげ";
 entry.Categories.Remove("サンプル");
 entry.Categories.Add("sample");
 

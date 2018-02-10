@@ -1,0 +1,3 @@
+[submodule "AsyncOAuth"]
+	path = AsyncOAuth
+	url = https://github.com/neuecc/AsyncOAuth.git

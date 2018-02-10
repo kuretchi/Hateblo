@@ -40,7 +40,7 @@ namespace Hateblo
         private static readonly Dictionary<string, string> _postContents
             = new Dictionary<string, string>
             {
-                { "scope", "read_public,write_public,read_private,write_private" },
+                { "scope", "read_private,write_private" },
             };
 
         /// <summary>

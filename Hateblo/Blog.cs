@@ -59,7 +59,7 @@ namespace Hateblo
         /// <exception cref="InternalServerErrorException">はてなブログ AtomPub で問題が発生しました。</exception>
         /// <exception cref="HttpRequestException">HTTP リクエストに失敗しました。</exception>
         public IEnumerable<Entry> GetEntries()
-            => GetObservableEntries().ToEnumerable();
+            => GetEntriesAsObservable().ToEnumerable();
 
         /// <summary>
         /// サーバーへのリクエストの間隔が指定された時間を下回らないように、ブログエントリの一覧を取得します。
@@ -70,7 +70,7 @@ namespace Hateblo
         /// <exception cref="InternalServerErrorException">はてなブログ AtomPub で問題が発生しました。</exception>
         /// <exception cref="HttpRequestException">HTTP リクエストに失敗しました。</exception>
         public IEnumerable<Entry> GetEntries(TimeSpan period)
-            => GetObservableEntries(period).ToEnumerable();
+            => GetEntriesAsObservable(period).ToEnumerable();
 
         /// <summary>
         /// ブログエントリの一覧を非同期で取得します。
@@ -79,8 +79,8 @@ namespace Hateblo
         /// <exception cref="ResourceNotFoundException">存在しないリソースにアクセスしました。</exception>
         /// <exception cref="InternalServerErrorException">はてなブログ AtomPub で問題が発生しました。</exception>
         /// <exception cref="HttpRequestException">HTTP リクエストに失敗しました。</exception>
-        public IObservable<Entry> GetObservableEntries()
-            => GetObservableEntries(TimeSpan.FromSeconds(1));
+        public IObservable<Entry> GetEntriesAsObservable()
+            => GetEntriesAsObservable(TimeSpan.FromSeconds(1));
 
         /// <summary>
         /// サーバーへのリクエストの間隔が指定された時間を下回らないように、ブログエントリの一覧を非同期で取得します。
@@ -90,7 +90,7 @@ namespace Hateblo
         /// <exception cref="ResourceNotFoundException">存在しないリソースにアクセスしました。</exception>
         /// <exception cref="InternalServerErrorException">はてなブログ AtomPub で問題が発生しました。</exception>
         /// <exception cref="HttpRequestException">HTTP リクエストに失敗しました。</exception>
-        public IObservable<Entry> GetObservableEntries(TimeSpan period)
+        public IObservable<Entry> GetEntriesAsObservable(TimeSpan period)
         {
             return Observable.DeferAsync(async ct =>
             {
@@ -284,7 +284,7 @@ namespace Hateblo
         /// <exception cref="InternalServerErrorException">はてなブログ AtomPub で問題が発生しました。</exception>
         /// <exception cref="HttpRequestException">HTTP リクエストに失敗しました。</exception>
         public IEnumerable<string> GetCategories()
-            => GetObservableCategories().ToEnumerable();
+            => GetCategoriesAsObservable().ToEnumerable();
 
         /// <summary>
         /// カテゴリの一覧を非同期で取得します。
@@ -293,7 +293,7 @@ namespace Hateblo
         /// <exception cref="ResourceNotFoundException">存在しないリソースにアクセスしました。</exception>
         /// <exception cref="InternalServerErrorException">はてなブログ AtomPub で問題が発生しました。</exception>
         /// <exception cref="HttpRequestException">HTTP リクエストに失敗しました。</exception>
-        public IObservable<string> GetObservableCategories()
+        public IObservable<string> GetCategoriesAsObservable()
         {
             return Observable.FromAsync(async ct =>
             {

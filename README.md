@@ -11,7 +11,7 @@ var token = await session.GetTokenAsync(verifier);                      // 確�
 var blog = token.GetBlog(blogId);                                       // ブログ ID で操作対象のブログを指定
 
 /* ブログエントリ一覧の取得 */
-blog.GetObservableEntries()                                             // IObservable<Entry>
+blog.GetEntriesAsObservable()                                           // IObservable<Entry>
     .Where(entry => entry.IsDraft && entry.Categories.Contains("C#"))   // カテゴリに C# が含まれている下書き
     .Subscribe(entry =>
     {
@@ -105,7 +105,7 @@ var entries = blog.GetEntries();  // IEnumerable<Entry>
 foreach (var entry in entries) Console.WriteLine(entry.Title);
 ```
 
-`GetObservableEntries` メソッドを用いて、非同期で取得することもできます。戻り値は `IObservable<Entry>` 型で、[Reactive Extensions](https://github.com/Reactive-Extensions/Rx.NET) を活用することができます。
+`GetEntriesAsObservable` メソッドを用いて、非同期で取得することもできます。戻り値は `IObservable<Entry>` 型で、[Reactive Extensions](https://github.com/Reactive-Extensions/Rx.NET) を活用することができます。
 
 ```csharp
 var entries = blog.GetObaservableEntries();  // IObservable<Entry>
@@ -117,7 +117,7 @@ entries.Subscribe(entry => Console.WriteLine(entry.Title));
 これらのメソッドは、取得されるブログエントリ数に比例する回数のリクエストをサーバーに送信します。サーバーへの負荷を軽減するため、規定ではリクエスト毎に 1 秒間の待機を行います。この待機時間を指定するために、`TimeSpan` を受け取るオーバーロードが用意されています。
 
 ```csharp
-var entries = blog.GetObservableEntries(TimeSpan.FromMilliseconds(500));  // リクエスト毎に 500 ms の間隔を空ける
+var entries = blog.GetEntriesAsObservable(TimeSpan.FromMilliseconds(500));  // リクエスト毎に 500 ms の間隔を空ける
 ```
 
 #### ID からの取得
@@ -180,11 +180,11 @@ await blog.RemoveAsync(entryId);
 
 ### カテゴリ一覧の取得
 
-`GetCategories` メソッド、または非同期の `GetObservableCategories` メソッドで取得できます。
+`GetCategories` メソッド、または非同期の `GetCategoriesAsObservable` メソッドで取得できます。
 
 ```csharp
 var categories = blog.GetCategories();  // IEnumerable<string>
-var observableCategories = blog.GetObservableCategories();  // IObservable<string>
+var observableCategories = blog.GetCategoriesAsObservable();  // IObservable<string>
 ```
 
 ## 貢献

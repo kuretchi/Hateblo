@@ -36,7 +36,7 @@ await blog.PostAsync(new Entry
 
 ## 導入
 
-~~NuGet から [Hateblo](https://www.nuget.org/packages/Hateblo) をインストールしてください。~~ 近日公開予定です。
+NuGet から [Hateblo](https://www.nuget.org/packages/Hateblo) をインストールしてください。
 
 ## 使い方
 

@@ -5,7 +5,7 @@
     <Authors>kuretchi</Authors>
     <Copyright>(C) 2018 kuretchi</Copyright>
     <Description>Hatena Blog AtomPub API Wrapper for .NET</Description>
-    <Version>0.0.0</Version>
+    <Version>0.0.0-beta</Version>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">

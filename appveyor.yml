@@ -31,7 +31,7 @@ before_build:
   - nuget restore
 
 after_build:
-  - dotnet pack Hateblo/Hateblo.csproj -c Release --no-build /p:NuspecFile=Hateblo\Hateblo.nuspec
+  - dotnet pack Hateblo\Hateblo.csproj -c Release --no-build /p:NuspecFile=Hateblo.nuspec
   - ps: Get-ChildItem .\*.nupkg | % { Push-AppveyorArtifact $_.FullName -FileName $_.Name }
 
 artifacts:

@@ -1,0 +1,35 @@
+version: '{build}'
+
+branches:
+  only:
+    - master
+
+skip_tags: true
+
+skip_commits:
+  files:
+    - '**/README.md'
+    - LICENSE.txt
+
+image: Visual Studio 2017
+
+configuration: Release
+
+build:
+  project: Hateblo.sln
+  publish_nuget: true
+
+before_build:
+  - git submodule init
+  - git submodule update
+  - nuget restore
+
+artifacts:
+  - path: Hateblo/bin/$(configuration)
+    name: Hateblo
+
+deploy:
+  provider: NuGet
+  api_key:
+    secure: 9oF7osqItmiaY4ei1hrI0MeSdjc1NR3zyfvQIZeYMlaevgUVSYiAITdSLw2KtM0j
+  skip_symbols: true

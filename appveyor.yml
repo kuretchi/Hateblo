@@ -8,14 +8,14 @@ skip_tags: true
 
 skip_commits:
   files:
-    - '**/README.md'
+    - '**\README.md'
     - LICENSE.txt
 
 image: Visual Studio 2017
 
 dotnet_csproj:
   patch: true
-  file: 'Hateblo/Hateblo.csproj;Hateblo.Tests/Hateblo.Tests.csproj'
+  file: 'Hateblo\Hateblo.csproj;Hateblo.Tests\Hateblo.Tests.csproj'
   assembly_version: '{version}'
   file_version: '{version}'
   informational_version: '{version}'
@@ -31,11 +31,11 @@ before_build:
   - nuget restore
 
 after_build:
-  - dotnet pack Hateblo/Hateblo.csproj -c Release --no-build /p:NuspecFile=Hateblo/Hateblo.nuspec
-  - ps: Get-ChildItem ./*.nupkg | % { Push-AppveyorArtifact $_.FullName -FileName $_.Name }
+  - dotnet pack Hateblo/Hateblo.csproj -c Release --no-build /p:NuspecFile=Hateblo\Hateblo.nuspec
+  - ps: Get-ChildItem .\*.nupkg | % { Push-AppveyorArtifact $_.FullName -FileName $_.Name }
 
 artifacts:
-  - path: Hateblo/bin/$(configuration)
+  - path: Hateblo\bin\$(configuration)
     name: Hateblo
 
 deploy:

@@ -22,8 +22,8 @@
         </dependencies>
     </metadata>
     <files>
-        <file src="bin\$configuration$\netstandard1.3\$id$.dll" target="lib\netstandard1.3" />
-        <file src="bin\$configuration$\netstandard1.3\$id$.xml" target="lib\netstandard1.3" />
-        <file src="bin\$configuration$\netstandard1.3\$id$.AsyncOAuth.dll" target="lib\netstandard1.3" />
+        <file src="bin\Release\netstandard1.3\Hateblo.dll" target="lib\netstandard1.3" />
+        <file src="bin\Release\netstandard1.3\Hateblo.xml" target="lib\netstandard1.3" />
+        <file src="bin\Release\netstandard1.3\Hateblo.AsyncOAuth.dll" target="lib\netstandard1.3" />
     </files>
 </package>

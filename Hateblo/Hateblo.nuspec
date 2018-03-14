@@ -6,8 +6,8 @@
         <title>Hateblo</title>
         <authors>kuretchi</authors>
         <owners>kuretchi</owners>
-        <licenseUrl>https://github.com/kuretchi/Hateblo</licenseUrl>
-        <projectUrl>https://github.com/kuretchi/Hateblo/blob/master/LICENSE.txt</projectUrl>
+        <projectUrl>https://github.com/kuretchi/Hateblo</projectUrl>
+        <licenseUrl>https://github.com/kuretchi/Hateblo/blob/master/LICENSE.txt</licenseUrl>
         <requireLicenseAcceptance>false</requireLicenseAcceptance>
         <description>Hatena Blog AtomPub API Wrapper for .NET</description>
         <releaseNotes>Initial release</releaseNotes>

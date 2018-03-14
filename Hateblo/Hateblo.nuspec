@@ -1,17 +1,17 @@
 <?xml version="1.0"?>
 <package>
     <metadata>
-        <id>$id$</id>
-        <version>$version$</version>
-        <title>$title$</title>
-        <authors>$author$</authors>
-        <owners>$author$</owners>
+        <id>Hateblo</id>
+        <version>0.0.1-beta</version>
+        <title>Hateblo</title>
+        <authors>kuretchi</authors>
+        <owners>kuretchi</owners>
         <licenseUrl>https://github.com/kuretchi/Hateblo</licenseUrl>
         <projectUrl>https://github.com/kuretchi/Hateblo/blob/master/LICENSE.txt</projectUrl>
         <requireLicenseAcceptance>false</requireLicenseAcceptance>
-        <description>$description$</description>
+        <description>Hatena Blog AtomPub API Wrapper for .NET</description>
         <releaseNotes>Initial release</releaseNotes>
-        <copyright>$copyright$</copyright>
+        <copyright>(C) 2018 kuretchi</copyright>
         <tags>Hatena HatenaBlog AtomPub</tags>
         <dependencies>
             <group targetFramework="netstandard1.3">
